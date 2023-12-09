@@ -36,17 +36,20 @@ const SpecialMenu = () => {
   return (
     <div className="app__specialMenu flex__center section__padding" id="menu">
       <div className="app__specialMenu-title">
-        <SubHeading title="Menu that fits your palate" />
-        <h1 className="headtext__cormorant">Today's Special</h1>
+      <h1 className="headtext__cormorant">Menu</h1>
+        <SubHeading title="that fits your palate..." />
+        
       </div>
 
       <div className="app__specialMenu-menu">
         <div className="app__specialMenu-menu_wine flex__center">
-          <p className="app__specialMenu-menu_heading">Wine & Beer</p>
+        <p className="app__specialMenu-menu_heading">Today's Menu</p>
+          {/* <p className="app__specialMenu-menu_heading"> </p>  fetch categories name here */}
           <div className="app__specialMenu_menu_items">
             {menuData.categories &&
               menuData.categories.map((category, index) => (
                 <React.Fragment key={category.name + index}>
+                  
                   <p className="app__specialMenu-menu_subheading">{category.name}</p>
                   {category.items &&
                     category.items.map((item, itemIndex) => (
@@ -54,51 +57,47 @@ const SpecialMenu = () => {
                         key={item.name + itemIndex}
                         title={item.name}
                         price={item.price}
-                        tags={item.tags}
+                        tags={item.description}
+                        ingredients={item.ingredients}
+                        nutritionalInfo={item.nutritional_info}
+                        seasonalAvailability={item.seasonal_availability}
                       />
                     ))}
                 </React.Fragment>
               ))}
           </div>
         </div>
-
-        <div className="app__specialMenu-menu_img">
-          <img src={images.menu} alt="menu_img" />
-        </div>
-
-        <div className="app__specialMenu-menu_cocktails flex__center">
-          <p className="app__specialMenu-menu_heading">Cocktails</p>
+        
+        <div className="seasonal_menu">
+       
+        <div className="app_specialMenu-menu_cocktails flex_center">
+          <p className="app__specialMenu-menu_heading">Seasonal Menu</p>
           <div className="app__specialMenu_menu_items">
-            {menuData.cocktails &&
-              (showFullMenu
-                ? menuData.cocktails.map((cocktail, index) => (
-                    <MenuItem
-                      key={cocktail.name + index}
-                      title={cocktail.name}
-                      price={cocktail.price}
-                      tags={cocktail.tags}
-                    />
-                  ))
-                : menuData.cocktails.slice(0, 2).map((cocktail, index) => (
-                    <MenuItem
-                      key={cocktail.name + index}
-                      title={cocktail.name}
-                      price={cocktail.price}
-                      tags={cocktail.tags}
-                    />
-                  )))}
+          <p className="app__specialMenu-menu_subheading">{menuData?.seasonal_menu?.name}</p>
+            {menuData.seasonal_menu &&
+              menuData.seasonal_menu.items.map((cocktail, index) => (
+                <div key={cocktail.name + index} className="menu-item">
+                  <MenuItem
+                    title={cocktail.name}
+                    price={cocktail.price}
+                    tags={cocktail.description}
+                  />
+                  
+                </div>
+                
+              ))}
+              <div className='chocolate_image'>
+              <img src={images.chocolate} alt="chocolate" />
+              </div>
           </div>
         </div>
       </div>
 
-      <div style={{ marginTop: 15 }}>
-        {!showFullMenu && (
-          <button type="button" className="custom__button" onClick={handleViewMore}>
-            View More
-          </button>
-        )}
+
       </div>
+
     </div>
+    
   );
 };
 

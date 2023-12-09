@@ -42,16 +42,17 @@ const Chef = () => {
             <img src={images.quote} alt="quote_image" />
             {/* Use the chef's bio from the API response */}
             <p className="p__opensans">{restaurants?.chef?.bio}</p>
+            
           </div>
-          {/* Add more content if needed */}
+          <div className="app__chef-content_quote">
+          <h3 className='dish'>Signature Dish</h3>
+            </div>
+          <div className="app__chef-content_quote">
+            <p className="p__opensans">{restaurants?.chef?.signature_dish}</p>
+          </div>
         </div>
 
-        <div className="app__chef-sign">
-          {/* Use the chef's name from the API response */}
-          <p>{restaurants?.chef?.name}</p>
-          <p className="p__opensans">Chef & Founder</p>
-          <img src={images.sign} alt="sign_image" />
-        </div>
+
       </div>
     </div>
   );

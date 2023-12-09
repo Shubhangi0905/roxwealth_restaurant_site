@@ -23,6 +23,7 @@ import gericht from '../assets/gericht.png';
 import review from '../assets/review.jpg'
 import events from '../assets/events.jpeg'
 import sust from '../assets/sust.jpg'
+import chocolate from '../assets/chocolate.jpeg'
 
 export default {
   bg,
@@ -50,4 +51,5 @@ export default {
   sign,
   quote,
   gericht,
+  chocolate,
 };
