@@ -6,6 +6,7 @@ import './App.css';
 import Reviews from './container/Reviews/Reviews';
 import Events from './container/Events/Events';
 import Sust from './container/Sust/Sust';
+import Chatbot from './ChatBot';
 
 
 const App = () => (
@@ -23,6 +24,7 @@ const App = () => (
     <FindUs />
     <Reviews/>
     <Footer />
+    <Chatbot/>
   </div>
 );
 

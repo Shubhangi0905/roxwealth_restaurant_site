@@ -24,6 +24,8 @@ import review from '../assets/review.jpg'
 import events from '../assets/events.jpeg'
 import sust from '../assets/sust.jpg'
 import chocolate from '../assets/chocolate.jpeg'
+import food from '../assets/food.avif'
+import star from '../assets/star.svg'
 
 export default {
   bg,
@@ -52,4 +54,6 @@ export default {
   quote,
   gericht,
   chocolate,
+  food,
+  star,
 };

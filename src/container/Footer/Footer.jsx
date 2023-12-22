@@ -44,13 +44,13 @@ const Footer = () => {
               <p className="p__opensans">{restaurantData.location?.longitude}</p>
               {restaurantData.online_presence?.social_media && (
                 <div className="app__footer-links_icons">
-                  <a href={restaurantData?.online_presence.social_media?.facebook} target="_blank" rel="noopener noreferrer">
+                  <a href={restaurantData.online_presence.social_media.facebook} target="_blank" rel="noopener noreferrer">
                     <FiFacebook />
                   </a>
-                  <a href={restaurantData?.online_presence.social_media?.instagram} target="_blank" rel="noopener noreferrer">
+                  <a href={restaurantData.online_presence.social_media.instagram} target="_blank" rel="noopener noreferrer">
                     <FiInstagram />
                   </a>
-                  <a href={restaurantData?.online_presence.social_media?.twitter} target="_blank" rel="noopener noreferrer">
+                  <a href={restaurantData.online_presence.social_media.twitter} target="_blank" rel="noopener noreferrer">
                     <FiTwitter />
                   </a>
                   {/* You can add Twitter link here if needed */}
@@ -63,9 +63,12 @@ const Footer = () => {
         </div>
 
         <div className="app__footer-links_logo">
-          <img src={images.gericht} alt="footer_logo" />
+          <h1></h1>
           {dataIsLoaded ? (
             <>
+            <h1 className='h1' key={restaurantData.id}>
+          {restaurantData.name}
+        </h1>
               <p className="p__opensans">&quot;{restaurantData?.ambiance?.description}&quot;</p>
               <img src={images.spoon} className="spoon__img" style={{ marginTop: 15 }} />
             </>

@@ -33,10 +33,12 @@ const Chef = () => {
         {/* Use the chef image from the API response */}
         <img src={restaurants?.chef?.image || images.chef} alt="chef_image" />
       </div>
+      
       <div className="app__wrapper_info">
-        <SubHeading title="Chef's word" />
+      <p className="p__name">{restaurants?.chef?.name}</p>
+       
         <h1 className="headtext__cormorant">What we believe in</h1>
-
+        
         <div className="app__chef-content">
           <div className="app__chef-content_quote">
             <img src={images.quote} alt="quote_image" />

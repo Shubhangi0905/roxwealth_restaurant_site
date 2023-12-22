@@ -56,14 +56,14 @@
 }
 
 .app__footer-headtext {
+    color: goldenrod;
     font-family: var(--font-base);
-    color: var(--color-white);
-    font-weight: 400;
+    font-size: 45px;
+    line-height: 83.2px;
     letter-spacing: 0.04em;
     text-transform: capitalize;
-    font-size: 32px;
-    line-height: 41.6px;
     margin-bottom: 1rem;
+    margin-top: 9%;
 }
 
 .footer__copyright {

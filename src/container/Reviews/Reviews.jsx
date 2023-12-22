@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-
 import { SubHeading } from '../../components';
 import { images } from '../../constants';
+import Rating from '@mui/material/Rating';
+import Typography from '@mui/material/Typography';
+import './review.css';
 
 const Reviews = () => {
   const [data, setData] = useState({});
@@ -27,6 +29,16 @@ const Reviews = () => {
     fetchData();
   }, []); // Empty dependency array ensures the effect runs once on component mount
 
+  // Helper function to generate star images based on rating
+  const renderStars = (rating) => {
+    return (
+      <div>
+        <Typography component="legend">Rating:</Typography>
+        <Rating name="read-only" value={rating} readOnly />
+      </div>
+    );
+  };
+
   return (
     <div className="app__bg app__wrapper section__padding" id="contact">
       <div className="app__wrapper_info">
@@ -38,7 +50,7 @@ const Reviews = () => {
               {data.reviews.map((review, index) => (
                 <div key={index} className="review">
                   <h1 className="p__opensans">Customer: {review.customer_name}</h1>
-                  <h5 className="p__opensans">Rating: {review.rating}</h5>
+                  {renderStars(review.rating)}
                   <p className="p__opensans">Comment: {review.comment}</p>
                   <hr />
                 </div>
@@ -51,7 +63,7 @@ const Reviews = () => {
       </div>
 
       <div className="app__wrapper_img">
-        <img src={images.review} alt="finus_img" />
+        <img src={images.food} alt="finus_img" />
       </div>
     </div>
   );

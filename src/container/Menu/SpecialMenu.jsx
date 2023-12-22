@@ -32,6 +32,7 @@ const SpecialMenu = () => {
   const handleViewMore = () => {
     setShowFullMenu(true);
   };
+  
 
   return (
     <div className="app__specialMenu flex__center section__padding" id="menu">
@@ -58,9 +59,6 @@ const SpecialMenu = () => {
                         title={item.name}
                         price={item.price}
                         tags={item.description}
-                        ingredients={item.ingredients}
-                        nutritionalInfo={item.nutritional_info}
-                        seasonalAvailability={item.seasonal_availability}
                       />
                     ))}
                 </React.Fragment>
